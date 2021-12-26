@@ -1,7 +1,7 @@
 " vim:set ts=4 sts=0 sw=4 ai et sr tw=0:
 "
 " address-match.vim: match MAC and IPv4 addresses, convert MAC styles
-" Last Change: May 12, 2019
+" Last Change: Dec 26, 2021 (comments only; prior change Mar 12, 2019)
 " Maintainer: Greg Paris <gregory at paris dot name>
 " Copyright (C) 2019 Gregory M Paris
 " License: MIT license  {{{
@@ -38,11 +38,11 @@
 "   When converting, dot-style MACs are generated in lowercase
 " It can convert uppercase colon-style MACs to lowercase MACs vice-versa
 "
-" Creates :xxx command registration aliases for AddressMatch() function.
+" Creates :xxx command registration aliases for the AddressMatch() function.
 "   Set g:address_match_no_commands to disable.
 " Creates <leader>xxx normal mode key mappings for match and convert operations.
 "   Set g:address_match_no_mappings to disable.
-" Creates text objects for all address types using the textobj-user plugin.
+" Creates text objects for all address types using the textobj-user plugin is loaded.
 "   Set g:address_match_no_textobj to disable.
 " }}}
 
@@ -239,7 +239,6 @@ let g:address_match.public.top_search = s:top_search . g:address_match.public.ba
 " AddressMatch function {{{
 " Match MAC addresses, positioning at first.
 " NOTE: Does not highlight reliably, but does match.
-" TODO: Extend this to do private, special and public matching.
 function! s:AddressMatch(style)
     let fc = a:style[0]
     let ft = a:style[:1]
